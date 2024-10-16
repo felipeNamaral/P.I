@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FPS com Three.js</title>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-      }
-      canvas {
-        display: block;
-      }
-    </style>
-	<script type="importmap">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPS com Three.js</title>
+  <link rel="stylesheet" href="/public/style.css">
+  <script type="importmap">
 		{
 		  "imports": {
 			"three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js",
@@ -23,8 +16,48 @@
 		  }
 		}
 	  </script>
-  </head>
-  <body id="oi">
-	<script type="module" src="/main.js"></script>
-  </body>
+</head>
+
+<body id="oi">
+  <div class="jogador1">
+    <div class="container">
+      <div class="img">
+        <img src="/pagina principal/img/macaco.jpg" alt="">
+      </div>
+      <div class="texto">
+        nome do jogador
+      </div>
+    </div>
+  </div>
+  <div class="jogador2">
+    <div class="img">
+      <img src="/pagina principal/img/macaco.jpg" alt="">
+    </div>
+    <div class="texto">
+      nome do jogador
+    </div>
+  </div>
+  </div>
+  <div class="jogador3">
+    <div class="img">
+      <img src="/pagina principal/img/macaco.jpg" alt="">
+    </div>
+    <div class="texto">
+      nome do jogador
+    </div>
+  </div>
+  </div>
+  <div class="jogador4">
+    <div class="img">
+      <img src="/pagina principal/img/macaco.jpg" alt="">
+    </div>
+    <div class="texto">
+      nome do jogador
+    </div>
+  </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #c276f3;
+    word-wrap: break-word;
+
+}
+header {
+    background-color: #6d094b;
+    color: #fff;
+    padding: 0.2rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+header .container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    position: relative;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo img {
+    width: 60%;
+    max-width: 150px;
+    border-radius: 100px;
+}
+
+.section1 .container {
+    padding-top: 200px;
+    position: flex;
+}
+
+.section1 .container .jogo1 {
+    float: left;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    height: 300px;
+    width: 600px;
+    align-items: center;
+    text-align: center;
+}
+
+.section1 .container .jogo1 img {
+    border-radius: 40px;
+    width: 100%;
+    padding: 1px;
+    margin: 1px;
+}
+
+.section1 .container .nome {
+    float: right;
+    padding: 5rem;
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    color: #e52277;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000
+}
+
+.section2 {
+    padding-top: 400px;
+    margin-bottom: 40px;
+}
+
+.swiper-wrapper {
+    margin: 0px 40px 30px;
+    padding: 20px 10px;
+}
+
+.swiper-slide img {
+    width: 400px;
+    height: 250px;
+    border-radius: 40px;
+
+}
+
+
+footer {
+    background: #6d094b;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    align-items: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+.containerC {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    width: 100vw;
+    height: 100vh;
+    background: #9d55da;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.contatenos {
+
+    max-width: 400px;
+    background-color: #a3acb9;
+    border: 2px solid #672374;
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 100px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1 rem;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.inputbox ion-icon {
+    position: relative;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    top: 20px;
+}
+
+.forget {
+    margin: 35px 0;
+    font-size: 0.85rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+}
+
+.textarea {
+    width: 300px;
+    height: 100px;
+    background-color: rgba(124, 90, 124, 0.5);
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+input:focus~textarea,
+input:valid~textarea {
+    top: -5px;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-bottom: 40px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}

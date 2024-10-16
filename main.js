@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import * as TWEEN from '@tweenjs/tween.js';
 
 
 
@@ -165,6 +166,7 @@ function createQuestionUI() {
   // Criação de um fundo arredondado no canto inferior direito
   const questionContainer = document.createElement('div');
   questionContainer.style.position = 'absolute';
+  questionContainer.style.top = '35%';
   questionContainer.style.bottom = '20px';
   questionContainer.style.right = '20px';
   questionContainer.style.width = '300px';
@@ -245,9 +247,48 @@ function movePlayer(steps) {
   }
 }
 
+function focusOnPlayer(player) {
+  const playerPosition = player.mesh.position;
+
+  // Define a nova posição da câmera em relação ao jogador
+  const cameraOffset = new THREE.Vector3(0, 10, 10);  // Defina o deslocamento desejado da câmera
+  const newCameraPosition = playerPosition.clone().add(cameraOffset);
+
+  // Anima a câmera até a nova posição (opcional, para suavizar o movimento)
+  new TWEEN.Tween(camera.position)
+    .to(newCameraPosition, 1000)  // 1000 ms = 1 segundo para completar o movimento
+    .easing(TWEEN.Easing.Quadratic.Out)
+    .start();
+
+  // Atualiza os controles para focar no jogador
+  controls.target.copy(playerPosition);  // Faz o foco da câmera ser o cone do jogador
+}
+
 function nextTurn() {
   currentPlayer = (currentPlayer + 1) % players.length;
+  focusOnPlayer(players[currentPlayer]); 
   askQuestion();  // Pergunta para o próximo jogador
+}
+
+
+function updatePlayerSaturation() {
+  // Remove o filtro de todos os jogadores
+  for (let i = 0; i < players.length; i++) {
+      const playerElement = document.querySelector(`.jogador${i + 1}`);
+      if (playerElement) {
+          playerElement.classList.remove('saturate');  // Remove a classe de todos os jogadores
+      }
+  }
+
+  // Aplicar o filtro de saturação aos outros jogadores, exceto o atual
+  for (let i = 0; i < players.length; i++) {
+      if (i !== currentPlayer) {  // Ignora o jogador atual
+          const playerElement = document.querySelector(`.jogador${i + 1}`);
+          if (playerElement) {
+              playerElement.classList.add('saturate');  // Adiciona a classe de saturação
+          }
+      }
+  }
 }
 
 function declareWinner(playerIndex) {
@@ -260,7 +301,9 @@ function declareWinner(playerIndex) {
 
 function animate() {
   controls.update(); // only required if controls.enableDamping = true
+  TWEEN.update();
   render();
+  updatePlayerSaturation();
 }
 
 function render() {
