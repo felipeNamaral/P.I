@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPS com Three.js</title>
+  <link rel="stylesheet" href="/calculo/public/style.css">
+  <script type="importmap">
+		{
+		  "imports": {
+			"three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js",
+			"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/",
+      "@tweenjs/tween.js": "https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.esm.js"
+
+		  }
+		}
+	  </script>
+</head>
+
+<body id="oi">
+  <div class="jogador1">
+    <div class="container">
+      <div class="img">
+        <img src="/paginaprincipal/public/img/macaco.jpg" alt="">
+      </div>
+      <div class="texto" id="nomeJogador1">
+      </div>
+    </div>
+  </div>
+
+  <div class="jogador2">
+    <div class="img">
+      <img src="/paginaprincipal/public/img/macaco.jpg" alt="">
+    </div>
+    <div class="texto" id="nomeJogador2">
+    </div>
+  </div>
+
+  <div class="jogador3">
+    <div class="img">
+      <img src="/paginaprincipal/public/img/macaco.jpg" alt="">
+    </div>
+    <div class="texto" id="nomeJogador3">
+    </div>
+  </div>
+
+  <div class="jogador4">
+    <div class="img">
+      <img src="/paginaprincipal/public/img/macaco.jpg" alt="">
+    </div>
+    <div class="texto" id="nomeJogador4">
+    </div>
+  </div>
+
+  <script>
+    // Certifica-se de que o código só será executado após a página ser completamente carregada
+    window.onload = function() {
+      // Função para definir o nome do jogador com verificação se o elemento existe
+      function setPlayerName(elementId, playerName) {
+        const element = document.getElementById(elementId);
+        if (element) {
+          // Se o nome do jogador for nulo, indefinido ou uma string vazia, exibe "Sem jogador"
+          element.textContent = playerName?.trim() ? playerName : 'Sem jogador';
+        } else {
+          console.error(`Elemento com ID ${elementId} não encontrado.`);
+        }
+      }
+
+      // Recupera os nomes do localStorage e atualiza os campos de texto
+      setPlayerName('nomeJogador1', localStorage.getItem('jogador1'));
+      setPlayerName('nomeJogador2', localStorage.getItem('jogador2'));
+      setPlayerName('nomeJogador3', localStorage.getItem('jogador3'));
+      setPlayerName('nomeJogador4', localStorage.getItem('jogador4'));
+    }
+  </script>
+  <script type="module" src="/calculo/main.js"></script>
+</body>
+
+</html>

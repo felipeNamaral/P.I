@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inicio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>BIGBgames</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/paginaprincipal/index.html"><img src="/paginaprincipal/public/img/logo2.jpeg" alt=""></a>
+            </div>
+            <div class="titulo">
+                <h1>Calculo</h1>
+            </div>
+        </div>
+    </header>
+    <section>
+        <form class="formulario" onsubmit="salvarNomes(); return false;">
+            <div class="jogador 1">
+                <input required placeholder="jogador 1" type="text" id="jogador1">
+            </div>
+            <div class="jogador 2">
+                <input placeholder="jogador 2" type="text" id="jogador2">
+            </div>
+            <div class="jogador 3">
+                <input placeholder="jogador 3" type="text" id="jogador3">
+            </div>
+            <div class="jogador 4">
+                <input placeholder="jogador 4" type="text" id="jogador4">
+            </div>
+            <button type="submit">Start</button>
+        </form>
+    </section>
+    
+    <script>
+      function salvarNomes() {
+        localStorage.setItem('jogador1', document.getElementById('jogador1').value);
+        localStorage.setItem('jogador2', document.getElementById('jogador2').value);
+        localStorage.setItem('jogador3', document.getElementById('jogador3').value);
+        localStorage.setItem('jogador4', document.getElementById('jogador4').value);
+        window.location.href = "/calculo/index.html"; // Redireciona para o jogo
+      }
+    </script>
+</body>
+
+</html>

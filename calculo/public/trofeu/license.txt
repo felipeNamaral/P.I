@@ -1,0 +1,11 @@
+Model Information:
+* title:	Trofeu
+* source:	https://sketchfab.com/3d-models/trofeu-240e8fbfba5b48148ae6bda2a3ba04ba
+* author:	Julio Cesar (https://sketchfab.com/juliocesarguedes)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Trofeu" (https://sketchfab.com/3d-models/trofeu-240e8fbfba5b48148ae6bda2a3ba04ba) by Julio Cesar (https://sketchfab.com/juliocesarguedes) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
