@@ -5,12 +5,15 @@ import * as TWEEN from '@tweenjs/tween.js';
 
 
 let camera, controls, scene, renderer;
-let modeloFPS,trofeu;
+let modeloFPS, trofeu;
 let players = [];
 let currentPlayer = 0;
 let casas = [];
 let questionElement, answerButtons;
 let gameOver = false;
+
+let questions = [];
+
 
 init();
 animate();
@@ -75,66 +78,91 @@ function init() {
     modeloFPS.rotation.set(0, Math.PI, 0);
     scene.add(modeloFPS);
 
-  }, undefined, function (error) {
-    console.error('Ocorreu um erro ao carregar o modelo:', error);
   });
 
 
 
   // modelo arvore
-  
-  const Aloader = new GLTFLoader().setPath('/calculo/public/arvore/'); // Cria um loader e define o caminho
 
-  // Número de árvores que você deseja adicionar
-  const numArvores = 150 ; // Ajuste conforme necessário
-  
-  // Carrega o modelo 3D
-  Aloader.load('scene.gltf', (gltf) => {
-    for (let i = 0; i < numArvores; i++) {
-      const modeloArvore = gltf.scene.clone(); // Clona o modelo da árvore
-      
+const Aloader = new GLTFLoader().setPath('/calculo/public/arvore/'); // Cria um loader e define o caminho
+
+// Número de árvores que você deseja adicionar
+const numArvores = 200; // Ajuste conforme necessário
+
+// Array para armazenar posições ocupadas
+const positionsOccupied = [];
+
+// Carrega o modelo 3D
+Aloader.load('scene.gltf', (gltf) => {
+  for (let i = 0; i < numArvores; i++) {
+    const modeloArvore = gltf.scene.clone(); // Clona o modelo da árvore
+
+    let x, z;
+    let isValidPosition = false; // Variável para verificar se a posição é válida
+
+    // Continue tentando encontrar uma posição válida
+    while (!isValidPosition) {
       // Defina posições aleatórias para as árvores
-      const x = Math.random() * 200 - 100; // Ajuste os limites conforme necessário
-      const z = Math.random() * 200 - 100; // Ajuste os limites conforme necessário
-      modeloArvore.position.set(x, -0.5, z); // Coloca a árvore na posição aleatória
-  
-      // Adiciona uma pequena rotação aleatória
-      modeloArvore.rotation.set(0, Math.random() * Math.PI * 2, 0); // Rotação aleatória ao redor do eixo Y
-      
-      // (Opcional) Ajuste a escala aleatória da árvore
-      const scale = 0.5 + Math.random() * 0.5; // Escala entre 0.5 e 1
-      modeloArvore.scale.set(scale, scale, scale); // Aplica a escala
-  
-      scene.add(modeloArvore); // Adiciona a árvore à cena
+      x = Math.random() * 200 - 100; // Ajuste os limites conforme necessário
+      z = Math.random() * 200 - 100; // Ajuste os limites conforme necessário
+
+      // Verifica se a posição está fora do retângulo proibido
+      if (isPositionValid(x, z) && !isPositionOccupied(x, z)) {
+        isValidPosition = true; // A posição é válida se estiver fora do retângulo e não ocupada
+        positionsOccupied.push({ x, z }); // Armazena a nova posição
+      }
     }
-  }, undefined, function (error) {
-    console.error('Ocorreu um erro ao carregar o modelo:', error); // Exibe erro se o carregamento falhar
+
+    modeloArvore.position.set(x, -0.5, z); // Coloca a árvore na posição aleatória
+
+    // Adiciona uma pequena rotação aleatória
+    modeloArvore.rotation.set(0, Math.random() * Math.PI * 2, 0); // Rotação aleatória ao redor do eixo Y
+
+    // (Opcional) Ajuste a escala aleatória da árvore
+    const scale = 0.5 + Math.random() * 0.5; // Escala entre 0.5 e 1
+    modeloArvore.scale.set(scale, scale, scale); // Aplica a escala
+
+    scene.add(modeloArvore); // Adiciona a árvore à cena
+  }
+});
+
+// Função para verificar se a posição está fora do retângulo proibido
+function isPositionValid(x, z) {
+  return !(
+    x >= -10 && x <= 30 && z >= -10 && z <= 10 // Retângulo proibido
+  );
+}
+
+// Função para verificar se a posição está ocupada
+function isPositionOccupied(x, z) {
+  const threshold = 2; // Distância mínima para considerar uma posição ocupada
+  return positionsOccupied.some(pos => {
+    return Math.abs(pos.x - x) < threshold && Math.abs(pos.z - z) < threshold;
   });
+}
 
   const Tloader = new GLTFLoader().setPath('/calculo/public/trofeu/');
   // Carrga o modelo 3D
   Tloader.load('scene.gltf', (gltf) => {
     trofeu = gltf.scene;
-    trofeu.position.set(32,-2,-0.5);
-    trofeu.scale.set(0.4,0.4,0.4); 
-    trofeu.rotation.set(0,2, 0);
+    trofeu.position.set(32, -2, -0.5);
+    trofeu.scale.set(0.4, 0.4, 0.4);
+    trofeu.rotation.set(0, 2, 0);
     scene.add(trofeu);
 
-      // Spotlight direcionada ao troféu
-  const trophySpotlight = new THREE.SpotLight(0xffffff, 1.5);  // Luz branca, intensidade 1.5
-  trophySpotlight.position.set(25, 10,-2);  // Posicionar a luz acima e ligeiramente à frente do troféu
-  trophySpotlight.target = trofeu;  // Apontar diretamente para o troféu
-  trophySpotlight.angle = Math.PI / 6;  // Controlar o ângulo do feixe de luz
+    // Spotlight direcionada ao troféu
+    const trophySpotlight = new THREE.SpotLight(0xffffff, 1.5);  // Luz branca, intensidade 1.5
+    trophySpotlight.position.set(25, 10, -2);  // Posicionar a luz acima e ligeiramente à frente do troféu
+    trophySpotlight.target = trofeu;  // Apontar diretamente para o troféu
+    trophySpotlight.angle = Math.PI / 6;  // Controlar o ângulo do feixe de luz
 
-  scene.add(trophySpotlight);
+    scene.add(trophySpotlight);
 
-  // // Adicionar um helper para visualizar o spotlight (opcional)
-  // const spotLightHelper = new THREE.SpotLightHelper(trophySpotlight);
-  // scene.add(spotLightHelper);
-    
+    // // Adicionar um helper para visualizar o spotlight (opcional)
+    // const spotLightHelper = new THREE.SpotLightHelper(trophySpotlight);
+    // scene.add(spotLightHelper);
 
-  }, undefined, function (error) {
-    console.error('Ocorreu um erro ao carregar o modelo:', error);
+
   });
 
 
@@ -145,24 +173,27 @@ function init() {
   redRectangle.position.set(-12, 0, 0); // Posição próxima ao início da trilha, levemente elevado do chão
   scene.add(redRectangle);
 
-        // Jogadores (cones coloridos)
-        const playerColors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00];
-        for (let i = 0; i < 4; i++) {
-            const coneGeometry = new THREE.ConeGeometry(0.5, 1, 32);
-            const coneMaterial = new THREE.MeshBasicMaterial({ color: playerColors[i] });
-            const cone = new THREE.Mesh(coneGeometry, coneMaterial);
-    
-            cone.position.set(-12, 1, i - 1.5);  // Posição inicial no retângulo vermelho
-            scene.add(cone);
-            players.push({ mesh: cone, position: -1 });  // Posição inicial no tabuleiro
-        }
-  
-    // Elementos de pergunta
-    createQuestionUI();
-  
-    askQuestion();  // Exibir a primeira pergunta
-  
-        
+  // Jogadores (cones coloridos)
+  const playerColors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00];
+  for (let i = 0; i < 4; i++) {
+    const coneGeometry = new THREE.ConeGeometry(0.5, 1, 32);
+    const coneMaterial = new THREE.MeshBasicMaterial({ color: playerColors[i] });
+    const cone = new THREE.Mesh(coneGeometry, coneMaterial);
+
+    cone.position.set(-12, 1, i - 1.5);  // Posição inicial no retângulo vermelho
+    scene.add(cone);
+    players.push({ mesh: cone, position: -1 });  // Posição inicial no tabuleiro
+  }
+
+
+
+  loadQuestions();
+  // Elementos de pergunta
+  createQuestionUI();
+
+  askQuestion();  // Exibir a primeira pergunta
+
+
 
   const path = new THREE.CurvePath();
 
@@ -247,7 +278,7 @@ function createQuestionUI() {
   questionContainer.style.bottom = '20px';
   questionContainer.style.right = '20px';
   questionContainer.style.width = '300px';
-  questionContainer.style.height = '200px';
+  questionContainer.style.height = '250px';
   questionContainer.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Fundo branco translúcido
   questionContainer.style.borderRadius = '15px';  // Cantos arredondados
   questionContainer.style.padding = '20px';
@@ -268,44 +299,76 @@ function createQuestionUI() {
   // Botões de resposta
   answerButtons = [];
   for (let i = 0; i < 4; i++) {
-      const button = document.createElement('button');
-      button.style.margin = '5px';
-      button.style.width = '100%';
-      button.style.padding = '10px';
-      button.style.fontSize = '16px';
-      button.style.borderRadius = '10px';  // Botões com cantos arredondados
-      button.style.backgroundColor = '#f0f0f0';  // Cor dos botões
-      button.style.border = 'none';
-      button.style.cursor = 'pointer';
-      
-      // Efeito de hover no botão
-      button.onmouseover = () => button.style.backgroundColor = '#d0d0d0';
-      button.onmouseout = () => button.style.backgroundColor = '#f0f0f0';
+    const button = document.createElement('button');
+    button.style.margin = '5px';
+    button.style.width = '100%';
+    button.style.padding = '10px';
+    button.style.fontSize = '16px';
+    button.style.borderRadius = '10px';  // Botões com cantos arredondados
+    button.style.backgroundColor = '#f0f0f0';  // Cor dos botões
+    button.style.border = 'none';
+    button.style.cursor = 'pointer';
 
-      // Ação ao clicar no botão
-      button.onclick = () => checkAnswer(i);
-      questionContainer.appendChild(button);
-      answerButtons.push(button);
+    // Efeito de hover no botão
+    button.onmouseover = () => button.style.backgroundColor = '#d0d0d0';
+    button.onmouseout = () => button.style.backgroundColor = '#f0f0f0';
+
+    // Ação ao clicar no botão
+    button.onclick = () => checkAnswer(i);
+    questionContainer.appendChild(button);
+    answerButtons.push(button);
   }
 }
-  
+
+
+function loadQuestions() {
+  fetch('/calculo/public/perguntas.json')  // Atualize o caminho se necessário
+    .then(response => {
+      if (!response.ok) throw new Error('Erro ao carregar perguntas');
+      return response.json();
+    })
+    .then(data => {
+      questions = data;  // Armazenar as perguntas carregadas
+      askQuestion();  // Pergunta inicial
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+    });
+}
+
+let currentQuestionIndex = -1; // Índice da pergunta atual
 
 function askQuestion() {
   if (gameOver) return;
-  questionElement.innerHTML = "Qual é a cor do céu?";  // Exemplo de pergunta
+
+  if (questions.length === 0) {
+    questionElement.innerHTML = "Nenhuma pergunta disponível.";
+    return;
+  }
+
+  // Seleciona uma pergunta aleatória
+  currentQuestionIndex = Math.floor(Math.random() * questions.length);
+  const currentQuestion = questions[currentQuestionIndex];
+
+  questionElement.innerHTML = currentQuestion.pergunta;  // Usa a pergunta do JSON
 
   // Alternativas
-  const answers = ["Azul", "Verde", "Amarelo", "Vermelho"];
+  const answers = currentQuestion.respostas;
   for (let i = 0; i < 4; i++) {
-      answerButtons[i].innerHTML = answers[i];
+    answerButtons[i].innerHTML = answers[i];
   }
+
+  MathJax.typeset();
 }
 
 function checkAnswer(index) {
-  if (index === 0) {  // Resposta correta (0 = Azul)
-      movePlayer(3);
+  // Verifica se a resposta está correta usando as respostas processadas
+  const currentQuestion = questions[currentQuestionIndex];
+
+  if (currentQuestion && currentQuestion.respostaCorreta === index) {
+    movePlayer(3);
   } else {
-      movePlayer(-2);
+    movePlayer(-1);
   }
 
   nextTurn();
@@ -324,17 +387,15 @@ function movePlayer(steps) {
 
     // Ajustar a posição dos cones na mesma casa
     const playersOnSameTile = players.filter(p => p.position === player.position);
-    const offset = 1.0;  // Distância entre os cones
+    const offset = 1;  // Distância entre os cones
 
     playersOnSameTile.forEach((p, index) => {
-      // Distribui os cones ao redor da posição central da casa (lado a lado)
-      const angle = (index * Math.PI / 2); // Distribui em ângulo (90 graus)
-      const xOffset = Math.cos(angle) * offset;  // Cálculo da posição no eixo X
-      const zOffset = Math.sin(angle) * offset;  // Cálculo da posição no eixo Z
+      // Distribui os cones lado a lado na direção do eixo Z
+      const zOffset = index * offset;  // Posiciona cada cone lado a lado no eixo Z
 
       // Adicionando animação de movimento usando TWEEN.js
       new TWEEN.Tween(p.mesh.position)
-        .to({ x: newPosition.x + xOffset, y: 1, z: newPosition.z + zOffset }, 1000) // Duração de 1 segundo
+        .to({ x: newPosition.x, y: 1, z: newPosition.z + zOffset }, 1000) // Duração de 1 segundo
         .easing(TWEEN.Easing.Quadratic.InOut) // Efeito suave
         .start(); // Inicia a animação
     });
@@ -369,7 +430,7 @@ function nextTurn() {
 
     // Verifica se o jogador atual tem um nome
     const currentPlayerName = localStorage.getItem(`jogador${currentPlayer + 1}`);
-    
+
     // Se encontramos um jogador com nome, saímos do loop
     if (currentPlayerName) {
       break; // Para o loop se o jogador atual tiver nome
@@ -385,42 +446,42 @@ function nextTurn() {
   } while (true); // Continua até encontrar um jogador com nome
 
   // Foca no jogador atual e pergunta
-  focusOnPlayer(players[currentPlayer]); 
+  focusOnPlayer(players[currentPlayer]);
   askQuestion();  // Pergunta para o próximo jogador
 }
 
 function updatePlayerSaturation() {
   // Remove o filtro de todos os jogadores
   for (let i = 0; i < players.length; i++) {
-      const playerElement = document.querySelector(`.jogador${i + 1}`);
-      if (playerElement) {
-          playerElement.classList.remove('saturate');  // Remove a classe de todos os jogadores
-      }
+    const playerElement = document.querySelector(`.jogador${i + 1}`);
+    if (playerElement) {
+      playerElement.classList.remove('saturate');  // Remove a classe de todos os jogadores
+    }
   }
 
   // Aplicar o filtro de saturação aos outros jogadores, exceto o atual
   for (let i = 0; i < players.length; i++) {
-      if (i !== currentPlayer) {  // Ignora o jogador atual
-          const playerElement = document.querySelector(`.jogador${i + 1}`);
-          if (playerElement) {
-              playerElement.classList.add('saturate');  // Adiciona a classe de saturação
-          }
+    if (i !== currentPlayer) {  // Ignora o jogador atual
+      const playerElement = document.querySelector(`.jogador${i + 1}`);
+      if (playerElement) {
+        playerElement.classList.add('saturate');  // Adiciona a classe de saturação
       }
+    }
   }
 }
 
 function declareWinner(playerIndex) {
   gameOver = true;
-  
+
   // Obter o nome do jogador vencedor
   const winnerName = localStorage.getItem(`jogador${playerIndex + 1}`);
-  
+
   // Armazenar o nome do vencedor para uso na página de vitória
   localStorage.setItem('winnerName', winnerName);
 
   // Exibir uma mensagem temporária antes de redirecionar
   questionElement.innerHTML = `O Jogador ${winnerName} ganhou! Redirecionando...`;
-  
+
   // Redirecionar após 3 segundos
   setTimeout(() => {
     window.location.href = '/calculo/fim/fim.html'; // Substitua pelo caminho correto
@@ -430,7 +491,7 @@ function declareWinner(playerIndex) {
 
 
 function animate() {
-  controls.update(); // only required if controls.enableDamping = true
+  controls.update();
   TWEEN.update();
   render();
   updatePlayerSaturation();

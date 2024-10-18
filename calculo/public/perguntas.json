@@ -1,0 +1,152 @@
+[
+  {
+      "pergunta": "Qual é o limite de \\( \\lim_{x \\to 0} \\frac{\\sin x}{x} \\)?",
+      "respostas": ["0", "1", "∞", "Não existe"],
+      "respostasProcessadas": ["0", "1", "∞", "Não existe"],
+      "respostaCorreta": 1
+  },
+  {
+      "pergunta": "Qual é a derivada de \\( f(x) = x^3 \\)?",
+      "respostas": ["\\(3x^2\\)", "\\(2x^3\\)", "\\(x^2\\)", "\\(3x\\)"],
+      "respostasProcessadas": ["3x²", "2x³", "x²", "3x"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \\to \\infty} \\frac{1}{x} \\)?",
+      "respostas": ["0", "1", "∞", "Não existe"],
+      "respostasProcessadas": ["0", "1", "∞", "Não existe"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é a regra do produto para derivadas?",
+      "respostas": ["\\((uv)' = u'v + uv'\\)", "\\((uv)' = u'v'\\)", "\\((uv)' = uv'\\)", "\\((uv)' = u + v\\)"],
+      "respostasProcessadas": ["(uv)' = u'v + uv'", "(uv)' = u'v'", "(uv)' = uv'", "(uv)' = u + v"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} \\)?",
+      "respostas": ["0", "1", "2", "Não existe"],
+      "respostasProcessadas": ["0", "1", "2", "Não existe"],
+      "respostaCorreta": 2
+  },
+  {
+      "pergunta": "Qual é a derivada de \\( f(x) = \\ln(x) \\)?",
+      "respostas": ["\\(\\frac{1}{x}\\)", "\\(\\ln(x)\\)", "\\(e^x\\)", "\\(x\\)"],
+      "respostasProcessadas": ["1/x", "ln(x)", "e^x", "x"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \\to 0} \\frac{\\tan x}{x} \\)?",
+      "respostas": ["0", "1", "∞", "Não existe"],
+      "respostasProcessadas": ["0", "1", "∞", "Não existe"],
+      "respostaCorreta": 1
+  },
+  {
+      "pergunta": "Qual é a derivada de \\( f(x) = e^x \\)?",
+      "respostas": ["\\(e^x\\)", "\\(xe^x\\)", "\\(x\\)", "\\(e\\)"],
+      "respostasProcessadas": ["e^x", "xe^x", "x", "e"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é a fórmula da regra da cadeia para derivadas?",
+      "respostas": ["\\((f(g(x)))' = f'(g(x))g'(x)\\)", "\\((f(g(x)))' = f'(x)g'(x)\\)", "\\((f(g(x)))' = f(g(x))g(x)\\)", "\\((f(g(x)))' = g'(x)\\)"],
+      "respostasProcessadas": ["(f(g(x)))' = f'(g(x))g'(x)", "(f(g(x)))' = f'(x)g'(x)", "(f(g(x)))' = f(g(x))g(x)", "(f(g(x)))' = g'(x)"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o limite de \\( \\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} \\)?",
+      "respostas": ["0", "2", "4", "Não existe"],
+      "respostasProcessadas": ["0", "2", "4", "Não existe"],
+      "respostaCorreta": 2
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3} \\)?",
+      "respostas": ["3", "6", "0", "Não existe"],
+      "respostasProcessadas": ["3", "6", "0", "Não existe"],
+      "respostaCorreta": 1
+  },
+  {
+      "pergunta": "Qual é a derivada de \\( f(x) = \\sin x \\)?",
+      "respostas": ["\\(\\cos x\\)", "\\(-\\cos x\\)", "\\(\\tan x\\)", "\\(\\sin x\\)"],
+      "respostasProcessadas": ["cos(x)", "-cos(x)", "tan(x)", "sin(x)"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \\to 0} \\frac{\\cos x - 1}{x^2} \\)?",
+      "respostas": ["0", "\\(-\\frac{1}{2}\\)", "1", "Não existe"],
+      "respostasProcessadas": ["0", "-1/2", "1", "Não existe"],
+      "respostaCorreta": 1
+  },
+  {
+      "pergunta": "Qual é a derivada de \\( f(x) = \\tan x \\)?",
+      "respostas": ["\\(\\sec^2 x\\)", "\\(\\sin^2 x\\)", "\\(\\cos^2 x\\)", "\\(\\frac{1}{\\cos^2 x}\\)"],
+      "respostasProcessadas": ["sec²(x)", "sin²(x)", "cos²(x)", "1/cos²(x)"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \\to 1} \\frac{x^3 - 1}{x - 1} \\)?",
+      "respostas": ["0", "1", "2", "3"],
+      "respostasProcessadas": ["0", "1", "2", "3"],
+      "respostaCorreta": 3
+  },
+  {
+      "pergunta": "Qual é o limite de \\( \\lim_{x \\to 0} \\frac{e^x - 1}{x} \\)?",
+      "respostas": ["0", "1", "∞", "Não existe"],
+      "respostasProcessadas": ["0", "1", "∞", "Não existe"],
+      "respostaCorreta": 1
+  },
+  {
+      "pergunta": "Qual é a regra do quociente para derivadas?",
+      "respostas": ["\\(\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}\\)", "\\(\\left(\\frac{u}{v}\\right)' = \\frac{u'v'}{v}\\)", "\\(\\left(\\frac{u}{v}\\right)' = u' + v'\\)", "\\(\\left(\\frac{u}{v}\\right)' = u - v"],
+      "respostasProcessadas": ["(u/v)' = (u'v - uv')/v²", "(u/v)' = (u'v')/v", "(u/v)' = u' + v'", "(u/v)' = u - v"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é a derivada de \\( f(x) = \\cos x \\)?",
+      "respostas": ["\\(-\\sin x\\)", "\\(\\sin x\\)", "\\(\\cos x\\)", "\\(-\\cos x\\)"],
+      "respostasProcessadas": ["-sin(x)", "sin(x)", "cos(x)", "-cos(x)"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o limite de \\( \\lim_{x \\to 0} \\frac{\\sin 2x}{x} \\)?",
+      "respostas": ["0", "1", "2", "Não existe"],
+      "respostasProcessadas": ["0", "1", "2", "Não existe"],
+      "respostaCorreta": 2
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \\to 0} \\frac{\\tan 3x}{x} \\)?",
+      "respostas": ["0", "1", "3", "Não existe"],
+      "respostasProcessadas": ["0", "1", "3", "Não existe"],
+      "respostaCorreta": 2
+  },
+  {
+      "pergunta": "Qual é a derivada de \\( f(x) = x^2 \\)?",
+      "respostas": ["\\(2x\\)", "\\(x^2\\)", "\\(x\\)", "\\(2\\)"],
+      "respostasProcessadas": ["2x", "x²", "x", "2"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \to 0} \\frac{x^2}{\\sin x} \\)?",
+      "respostas": ["0", "1", "2", "Não existe"],
+      "respostasProcessadas": ["0", "1", "2", "Não existe"],
+      "respostaCorreta": 1
+  },
+  {
+      "pergunta": "Qual é o limite de \\( \\lim_{x \to 0} \\frac{\\sin 5x}{x} \\)?",
+      "respostas": ["0", "1", "5", "Não existe"],
+      "respostasProcessadas": ["0", "1", "5", "Não existe"],
+      "respostaCorreta": 2
+  },
+  {
+      "pergunta": "Qual é a derivada de \\( f(x) = x^4 \\)?",
+      "respostas": ["\\(4x^3\\)", "\\(x^3\\)", "\\(3x^4\\)", "\\(4\\)"],
+      "respostasProcessadas": ["4x³", "x³", "3x⁴", "4"],
+      "respostaCorreta": 0
+  },
+  {
+      "pergunta": "Qual é o valor de \\( \\lim_{x \to 1} \\frac{x^3 + x^2 - 2}{x - 1} \\)?",
+      "respostas": ["0", "1", "3", "2"],
+      "respostasProcessadas": ["0", "1", "3", "2"],
+      "respostaCorreta": 2
+  }
+]

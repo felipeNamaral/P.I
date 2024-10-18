@@ -16,6 +16,9 @@
 		  }
 		}
 	  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 
 <body id="oi">
@@ -55,7 +58,7 @@
 
   <script>
     // Certifica-se de que o código só será executado após a página ser completamente carregada
-    window.onload = function() {
+    window.onload = function () {
       // Função para definir o nome do jogador com verificação se o elemento existe
       function setPlayerName(elementId, playerName) {
         const element = document.getElementById(elementId);
