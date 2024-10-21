@@ -117,8 +117,8 @@ body{
 header {
   background-color: #6d094b;
     color: #fff;
-    margin-top: 7%;
-    width: 10%;
+    margin-top: 0%;
+    width: 100%;
     position: absolute; 
     top: 0;
     justify-content: center;
@@ -126,8 +126,15 @@ header {
     padding-left: 100px;
     padding-right: 300px;
     padding-bottom: 10px;
-}
+    height: 110px;
+  }
 
 h1.entry-title {
-  justify-content: center;
+    font-family: "Press Start 2P", serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    font-size: 4rem;
+    margin-left: 45%;
 } 
+
+
