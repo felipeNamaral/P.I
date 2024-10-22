@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/aimlab/fim/fim.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>BIGBgames</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/paginaprincipal/index.html"><img src="/paginaprincipal/public/img/logo2.jpeg" alt=""></a>
+            </div>
+            <div class="titulo">
+                <h1>Aimlab</h1>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="vitoria">
+                <h1>FIM</h1>
+            </div>
+            <div class="resultado">
+                <h2>Score:<Span id="scorefinal"></Span></h2>
+                <h2>Precisão:<Span id="precisao"></Span></h2>
+                <h2>Erros:<Span id="Errosfinal"></Span></h2>
+            </div>
+        </div>
+        <a href="/aimlab/inicio/inicio.html"><button>Reiniciar</button></a>
+    </section>
+    
+    <script>
+        // Recuperando os resultados do Local Storage
+        const score = localStorage.getItem('score');
+        const precisao = localStorage.getItem('precisao');
+        const erros = localStorage.getItem('erros');
+
+        // Colocando os resultados nos spans
+        document.getElementById('scorefinal').innerText = score;
+        document.getElementById('precisao').innerText = `${precisao}%`;
+        document.getElementById('Errosfinal').innerText = erros;
+    </script>
+</body>
+
+</html>

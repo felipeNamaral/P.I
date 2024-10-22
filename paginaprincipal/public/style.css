@@ -105,9 +105,11 @@ nav ul li a:hover {
     width: 400px;
     height: 250px;
     border-radius: 40px;
-
 }
 
+.swiper-slide:hover{
+    filter: saturate(0.5);
+}
 
 footer {
     background: #6d094b;

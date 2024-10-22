@@ -11,7 +11,7 @@ let currentPlayer = 0;
 let casas = [];
 let questionElement, answerButtons;
 let gameOver = false;
-
+let mixer;
 let questions = [];
 
 
@@ -84,62 +84,62 @@ function init() {
 
   // modelo arvore
 
-const Aloader = new GLTFLoader().setPath('/calculo/public/arvore/'); // Cria um loader e define o caminho
+  const Aloader = new GLTFLoader().setPath('/calculo/public/arvore/'); // Cria um loader e define o caminho
 
-// Número de árvores que você deseja adicionar
-const numArvores = 200; // Ajuste conforme necessário
+  // Número de árvores que você deseja adicionar
+  const numArvores = 200; // Ajuste conforme necessário
 
-// Array para armazenar posições ocupadas
-const positionsOccupied = [];
+  // Array para armazenar posições ocupadas
+  const positionsOccupied = [];
 
-// Carrega o modelo 3D
-Aloader.load('scene.gltf', (gltf) => {
-  for (let i = 0; i < numArvores; i++) {
-    const modeloArvore = gltf.scene.clone(); // Clona o modelo da árvore
+  // Carrega o modelo 3D
+  Aloader.load('scene.gltf', (gltf) => {
+    for (let i = 0; i < numArvores; i++) {
+      const modeloArvore = gltf.scene.clone(); // Clona o modelo da árvore
 
-    let x, z;
-    let isValidPosition = false; // Variável para verificar se a posição é válida
+      let x, z;
+      let isValidPosition = false; // Variável para verificar se a posição é válida
 
-    // Continue tentando encontrar uma posição válida
-    while (!isValidPosition) {
-      // Defina posições aleatórias para as árvores
-      x = Math.random() * 200 - 100; // Ajuste os limites conforme necessário
-      z = Math.random() * 200 - 100; // Ajuste os limites conforme necessário
+      // Continue tentando encontrar uma posição válida
+      while (!isValidPosition) {
+        // Defina posições aleatórias para as árvores
+        x = Math.random() * 200 - 100; // Ajuste os limites conforme necessário
+        z = Math.random() * 200 - 100; // Ajuste os limites conforme necessário
 
-      // Verifica se a posição está fora do retângulo proibido
-      if (isPositionValid(x, z) && !isPositionOccupied(x, z)) {
-        isValidPosition = true; // A posição é válida se estiver fora do retângulo e não ocupada
-        positionsOccupied.push({ x, z }); // Armazena a nova posição
+        // Verifica se a posição está fora do retângulo proibido
+        if (isPositionValid(x, z) && !isPositionOccupied(x, z)) {
+          isValidPosition = true; // A posição é válida se estiver fora do retângulo e não ocupada
+          positionsOccupied.push({ x, z }); // Armazena a nova posição
+        }
       }
+
+      modeloArvore.position.set(x, -0.5, z); // Coloca a árvore na posição aleatória
+
+      // Adiciona uma pequena rotação aleatória
+      modeloArvore.rotation.set(0, Math.random() * Math.PI * 2, 0); // Rotação aleatória ao redor do eixo Y
+
+      // (Opcional) Ajuste a escala aleatória da árvore
+      const scale = 0.5 + Math.random() * 0.5; // Escala entre 0.5 e 1
+      modeloArvore.scale.set(scale, scale, scale); // Aplica a escala
+
+      scene.add(modeloArvore); // Adiciona a árvore à cena
     }
-
-    modeloArvore.position.set(x, -0.5, z); // Coloca a árvore na posição aleatória
-
-    // Adiciona uma pequena rotação aleatória
-    modeloArvore.rotation.set(0, Math.random() * Math.PI * 2, 0); // Rotação aleatória ao redor do eixo Y
-
-    // (Opcional) Ajuste a escala aleatória da árvore
-    const scale = 0.5 + Math.random() * 0.5; // Escala entre 0.5 e 1
-    modeloArvore.scale.set(scale, scale, scale); // Aplica a escala
-
-    scene.add(modeloArvore); // Adiciona a árvore à cena
-  }
-});
-
-// Função para verificar se a posição está fora do retângulo proibido
-function isPositionValid(x, z) {
-  return !(
-    x >= -10 && x <= 30 && z >= -10 && z <= 10 // Retângulo proibido
-  );
-}
-
-// Função para verificar se a posição está ocupada
-function isPositionOccupied(x, z) {
-  const threshold = 2; // Distância mínima para considerar uma posição ocupada
-  return positionsOccupied.some(pos => {
-    return Math.abs(pos.x - x) < threshold && Math.abs(pos.z - z) < threshold;
   });
-}
+
+  // Função para verificar se a posição está fora do retângulo proibido
+  function isPositionValid(x, z) {
+    return !(
+      x >= -10 && x <= 30 && z >= -10 && z <= 10 // Retângulo proibido
+    );
+  }
+
+  // Função para verificar se a posição está ocupada
+  function isPositionOccupied(x, z) {
+    const threshold = 2; // Distância mínima para considerar uma posição ocupada
+    return positionsOccupied.some(pos => {
+      return Math.abs(pos.x - x) < threshold && Math.abs(pos.z - z) < threshold;
+    });
+  }
 
   const Tloader = new GLTFLoader().setPath('/calculo/public/trofeu/');
   // Carrga o modelo 3D
@@ -161,8 +161,6 @@ function isPositionOccupied(x, z) {
     // // Adicionar um helper para visualizar o spotlight (opcional)
     // const spotLightHelper = new THREE.SpotLightHelper(trophySpotlight);
     // scene.add(spotLightHelper);
-
-
   });
 
 
@@ -184,7 +182,6 @@ function isPositionOccupied(x, z) {
     scene.add(cone);
     players.push({ mesh: cone, position: -1 });  // Posição inicial no tabuleiro
   }
-
 
 
   loadQuestions();
@@ -493,6 +490,7 @@ function declareWinner(playerIndex) {
 function animate() {
   controls.update();
   TWEEN.update();
+  if (mixer) mixer.update(0.01);
   render();
   updatePlayerSaturation();
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/aimlab/styles.css">
+    <title>FPS com Three.js</title>
+    <style>
+      canvas {
+        display: block;
+      }
+    </style>
+	<script type="importmap">
+		{
+		  "imports": {
+			"three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js",
+			"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/"
+		  }
+		}
+	  </script>
+  </head>
+  <body id="oi">
+    <header>
+        <div class="estatus">
+            <div class="info">
+                <p>time: <span id="time">00:00</span></p>
+                <p>score: <span id="score">0</span></p> 
+                <p>precisão: <span id="precisao">100%</span></p>
+               </div>
+        </div>
+    </header>
+    <section id="game-container">
+
+    </section>
+    <footer>
+        <div class="opcoes">
+            <a href="/aimlab/inicio/inicio.html"><button class="btn restart">Restart</button></a>
+            <button class="btn cheia" id="telaCheia">full</button>
+        </div>
+    </footer>
+    <script type="module" src="/aimlab/main.js"></script>
+  </body>
+</html>
