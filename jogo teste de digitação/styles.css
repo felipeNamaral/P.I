@@ -4,16 +4,56 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 body{
+  /* display: flex; */
+  /* padding: 0 10px; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  min-height: 100vh;
+  background: #c276f3;
+}
+
+header {
+  background-color: #6d094b;
+  color: #fff;
+  padding: 0.2rem 0;
+  width: 100%;
+  z-index: 1;
   display: flex;
-  padding: 0 10px;
+  justify-content: center;
+
+}
+
+header .container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.logo img {
+  width: 60%;
+  max-width: 150px;
+  border-radius: 100px;
+}
+
+.titulo {
+  font-family: "Press Start 2P", serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-size: 2rem;
+  padding-top: 20px;
+}
+
+section{
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background: #a9eeb2;
+  padding: 0 10px;
+  margin-top: 100px;
 }
+
 ::selection{
   color: #fff;
   background: #17A2B8;
@@ -98,8 +138,13 @@ body{
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  background: #0a8b11;
+  background: #e52277;
   transition: transform 0.3s ease;
+}
+
+button:hover{
+  transition: 2s;
+  background-color: #6d094b;
 }
 .content button:active{
   transform: scale(0.97);

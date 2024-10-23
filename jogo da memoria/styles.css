@@ -1,10 +1,11 @@
 /* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 body{
   display: flex;
@@ -13,6 +14,38 @@ body{
   min-height: 100vh;
   background: #c276f3;
 }
+
+header {
+  background-color: #6d094b;
+  color: #fff;
+  padding: 0.2rem 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+
+}
+
+header .container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.logo img {
+  width: 60%;
+  max-width: 150px;
+  border-radius: 100px;
+}
+
+.titulo {
+  margin-top: 20px;
+  font-family: "Press Start 2P", system-ui;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-size: 2rem;
+}
+
 .wrapper{
   padding: 25px;
   border-radius: 10px;
