@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fim.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>BIGBgames</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/pages/index.html"><img src="/pages/public/img/logo2.jpeg" alt=""></a>
+            </div>
+            <div class="titulo">
+                <h1>Cálculo</h1>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="vitoria">
+                <h1><span id="winner-name"></span> ganhou!!!</h1>
+            </div>
+            <div class="gif">
+                <img src="vitoria.gif" alt="">
+            </div>
+        </div>
+        <a href="/calculo/inicio/inicio.html"><button>Reiniciar</button></a>
+    </section>
+    
+    <script>
+        // Recuperar o nome do vencedor do localStorage
+        const winnerName = localStorage.getItem('winnerName');
+        document.getElementById('winner-name').innerText = winnerName || 'Jogador desconhecido';
+        
+        // Limpar o nome do vencedor do localStorage após exibição
+        localStorage.removeItem('winnerName');
+    </script>
+</body>
+
+</html>
