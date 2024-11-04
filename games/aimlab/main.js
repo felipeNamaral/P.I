@@ -40,7 +40,7 @@ function init() {
     const textureLoader = new THREE.TextureLoader();
 
     // Textura para o chão
-    const floorTexture = textureLoader.load('/aimlab/public/img/texturaChao.jpeg');
+    const floorTexture = textureLoader.load('/games/aimlab/public/img/texturaChao.jpeg');
     floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
     floorTexture.repeat.set(4, 4); // Ajuste para repetir a textura no chão
 
@@ -52,7 +52,7 @@ function init() {
     scene.add(floor);
 
     // Textura para o teto
-    const ceilingTexture = textureLoader.load('/aimlab/public/img/texturaTop.jpeg');
+    const ceilingTexture = textureLoader.load('/games/aimlab/public/img/texturaTop.jpeg');
     const ceilingMaterial = new THREE.MeshBasicMaterial({ map: ceilingTexture });
     const ceilingGeometry = new THREE.PlaneGeometry(400, 400); // Mesma dimensão do chão
     const ceiling = new THREE.Mesh(ceilingGeometry, ceilingMaterial);
@@ -75,7 +75,7 @@ function init() {
 
 
     const ItextureLoader = new THREE.TextureLoader();
-    const Itexture = ItextureLoader.load('/aimlab/public/img/logo21.jpeg');
+    const Itexture = ItextureLoader.load('/games/aimlab/public/img/logo21.jpeg');
 
 
 
@@ -161,7 +161,7 @@ function init() {
     });
 
     // Carrega o modelo GLB único (braço + arma)
-    const loader = new GLTFLoader().setPath('/aimlab/public/tactical_pistol/');
+    const loader = new GLTFLoader().setPath('/games/aimlab/public/tactical_pistol/');
 
     // Carrega o modelo 3D
     loader.load('scene.gltf', (gltf) => {
@@ -183,7 +183,7 @@ function init() {
 
 
     // Carrega o modelo da bola
-    const Bloader = new GLTFLoader().setPath('/aimlab/public/bola/');
+    const Bloader = new GLTFLoader().setPath('/games/aimlab/public/bola/');
     Bloader.load('scene.gltf', (gltf) => {
         for (let i = 0; i < 3; i++) {
             const bola = gltf.scene.clone();
@@ -372,7 +372,7 @@ let sound;
 let shootingInterval; // Variável para armazenar o intervalo
 
 function playShootSound() {
-    sound = new Audio('/aimlab/public/pistol-shot-233473.mp3'); // Cria uma nova instância de som
+    sound = new Audio('/games/aimlab/public/pistol-shot-233473.mp3'); // Cria uma nova instância de som
     sound.volume = 0.5; // Ajuste o volume conforme necessário
     sound.play();
     playBallAnimation() // Toca o som
@@ -481,5 +481,5 @@ function finishGame() {
     localStorage.setItem('score', pts);
     localStorage.setItem('precisao', precisao);
     localStorage.setItem('erros', erros);
-    window.location.href = '/aimlab/fim/fim.html';
+    window.location.href = '/games/aimlab/fim/fim.html';
 }

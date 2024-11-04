@@ -47,7 +47,7 @@ function init() {
 
   // Adicionar textura de grama ao chão
   const textureLoader = new THREE.TextureLoader();
-  const grassTexture = textureLoader.load('/calculo/public/img/grama.jpeg'); // Insira o caminho da sua textura
+  const grassTexture = textureLoader.load('/games/calculo/public/img/grama.jpeg'); // Insira o caminho da sua textura
   grassTexture.wrapS = THREE.RepeatWrapping;
   grassTexture.wrapT = THREE.RepeatWrapping;
   grassTexture.repeat.set(10, 10); // Repetir a textura para cobrir uma grande área
@@ -69,7 +69,7 @@ function init() {
   scene.add(directionalLight);
 
   //add as montanhas 
-  const loader = new GLTFLoader().setPath('/calculo/public/mt/');
+  const loader = new GLTFLoader().setPath('/games/calculo/public/mt/');
   // Carrga o modelo 3D
   loader.load('scene.gltf', (gltf) => {
     modeloFPS = gltf.scene;
@@ -84,7 +84,7 @@ function init() {
 
   // modelo arvore
 
-  const Aloader = new GLTFLoader().setPath('/calculo/public/arvore/'); // Cria um loader e define o caminho
+  const Aloader = new GLTFLoader().setPath('/games/calculo/public/arvore/'); // Cria um loader e define o caminho
 
   // Número de árvores que você deseja adicionar
   const numArvores = 200; // Ajuste conforme necessário
@@ -141,7 +141,7 @@ function init() {
     });
   }
 
-  const Tloader = new GLTFLoader().setPath('/calculo/public/trofeu/');
+  const Tloader = new GLTFLoader().setPath('/games/calculo/public/trofeu/');
   // Carrga o modelo 3D
   Tloader.load('scene.gltf', (gltf) => {
     trofeu = gltf.scene;
@@ -258,7 +258,7 @@ function init() {
 
   // Adiciona o evento de clique para redirecionar
   backButton.onclick = () => {
-    window.location.href = '/calculo/inicio/inicio.html'; // Substitua pelo URL da sua página inicial
+    window.location.href = '/games/calculo/inicio/inicio.html'; // Substitua pelo URL da sua página inicial
   };
 
   document.body.appendChild(backButton);
@@ -319,7 +319,7 @@ function createQuestionUI() {
 
 
 function loadQuestions() {
-  fetch('/calculo/public/perguntas.json')  // Atualize o caminho se necessário
+  fetch('/games/calculo/public/perguntas.json')  // Atualize o caminho se necessário
     .then(response => {
       if (!response.ok) throw new Error('Erro ao carregar perguntas');
       return response.json();
@@ -481,7 +481,7 @@ function declareWinner(playerIndex) {
 
   // Redirecionar após 3 segundos
   setTimeout(() => {
-    window.location.href = '/calculo/fim/fim.html'; // Substitua pelo caminho correto
+    window.location.href = '/games/calculo/fim/fim.html'; // Substitua pelo caminho correto
   }, 1000);
 }
 
