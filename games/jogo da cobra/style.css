@@ -5,25 +5,47 @@ General
 ================================================*/
 
 * {
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #9a3aaa;
+  word-wrap: break-word;
+}
+
+header {
+  background-color: #6d094b;
+  color: #fff;
+  padding: 0.2rem 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+header .container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.logo img {
+  width: 60%;
+  max-width: 150px;
+  border-radius: 100px;
+}
+
+.titulo {
+  font-family: "Press Start 2P", serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-size: 2rem;
+}
   
-  html,
-  body {
-    background-color: #000;
-    height: 100%;
-  }
-  
-  body {
-    background: #222;
-    background: radial-gradient(#60026e, #9a3aaa);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    font: 100%/1.5 sans-serif;
-    overflow: hidden;
-  }
   
   /*================================================
   
@@ -49,6 +71,7 @@ General
     bottom: 0;
     left: 0;
     margin: auto;
+    margin-top: 150px;
     position: absolute;
     right: 0;
     top: 0;
