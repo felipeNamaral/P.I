@@ -1,6 +1,9 @@
  new Swiper('.swiper', {
     loop: true,
     spaceBetWeen: 30,
+    autoplay: {
+      delay: 3000,
+    },
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
