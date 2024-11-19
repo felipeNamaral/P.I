@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -10,6 +11,7 @@ body {
     word-wrap: break-word;
 
 }
+
 header {
     background-color: #6d094b;
     color: #fff;
@@ -26,6 +28,7 @@ header .container {
     justify-content: space-between;
     align-items: center;
 }
+
 nav ul {
     list-style: none;
     display: flex;
@@ -68,7 +71,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.jogo1:hover{
+.jogo1:hover {
     filter: saturate(0.7);
 }
 
@@ -108,7 +111,7 @@ nav ul li a:hover {
     border-radius: 40px;
 }
 
-.swiper-slide:hover{
+.swiper-slide:hover {
     filter: saturate(0.5);
 }
 
@@ -120,40 +123,39 @@ footer {
     align-items: center;
 }
 
-.logo_footer{
+.logo_footer {
     font-size: 1.5rem;
     color: #fff;
     text-decoration: none;
-    font-family: "Press Start 2P", serif;   
+    font-family: "Press Start 2P", serif;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #e52277;
 }
-.logo_footer:hover{
+
+.logo_footer:hover {
     text-decoration: underline;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.nomes{
+
+.nomes {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
 
-.nome1{
-margin-left: 10px;
-font-size: 1rem;
-color: #fff;
+.nome1 {
+    margin-left: 10px;
+    font-size: 1rem;
+    color: #fff;
 }
-.nome1:hover{
+
+.nome1:hover {
     text-decoration: underline;
 }
-
-
-
-
-
 
 .containerC {
     padding-top: 200px;
@@ -212,7 +214,7 @@ h2 {
     font-size: 2rem;
     color: #ffffff;
     text-align: center;
-    
+
 }
 
 .inputbox {
@@ -269,13 +271,14 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-.sectionS .containerS{
+.sectionS .containerS {
     display: flex;
-width: 100%;
-height:500px;
-margin-bottom:152px;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 152px;
 }
-.sectionS .containerS p{
+
+.sectionS .containerS p {
     float: right;
     padding: 5rem;
     font-family: "Press Start 2P", serif;
@@ -285,6 +288,130 @@ margin-bottom:152px;
     color: #fff;
     justify-content: center;
     margin-top: 5%;
-    text-indent:6rem;
+    text-indent: 6rem;
     text-align: justify;
 }
+
+
+
+
+@media (max-width: 480px) {
+
+    body {
+        width: 450px;
+    }
+
+    header {
+        height: 80px;
+        width: 450px;
+    }
+
+    .logo img {
+        width: 70%;
+        max-width: 100px;
+
+    }
+
+    header .container {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    nav ul {
+        margin-left: 5rem;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+
+
+    .section1 .container {
+        padding-top: 100px;
+        position: flex;
+        height: 90px;
+    }
+
+    .section1 .container .jogo1 {
+        float: left;
+        margin: 1rem;
+        padding: 0rem;
+        border-radius: 20px;
+        display: flex;
+        height: 150px;
+        width: 300px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section1 .container .jogo1 img {
+        border-radius: 20px;
+        width: 300px;
+        height: 150px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .section1 .container .nome {
+        float: right;
+        padding: 5rem;
+        font-family: "Press Start 2P", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 3rem;
+        color: #fff;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #e52277
+    }
+
+    .nome {
+        margin-top: -10px;
+        height: 100px;
+    }
+
+    .nome h1 {
+        font-size: 2.5rem;
+    }
+
+    .swiper-slide img {
+        width: 70%;
+        height: auto;
+        border-radius: 20px;
+    }
+
+
+    footer {
+        height: 215px;
+    }
+
+    footer .text {
+        margin-top: 20px;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
+
+
+    .sectionS .containerS {
+        display: flex;
+        width: 450px;
+        height: 650px;
+        margin-bottom: 152px;
+    }
+    
+    .sectionS .containerS p {
+        font-size: 0.8rem;
+        justify-content: left;
+        text-align: left;
+        padding: 4rem;
+    }
+    
+}
+

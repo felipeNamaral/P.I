@@ -162,3 +162,30 @@ header .container {
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
     transition-duration: 0ms;
   }
+  @media (max-width: 480px) {
+
+    header {
+        height: 80px;
+        width: 450px;
+    }
+  
+    .logo img {
+        width: 70%;
+        max-width: 100px;
+  
+    }
+    header .container {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+    header .container .titulo {
+     font-size: 1rem;
+    }
+  
+  
+    button {
+    margin-left: 100px;
+  }
+  
+  }

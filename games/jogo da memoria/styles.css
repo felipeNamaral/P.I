@@ -169,5 +169,27 @@ h1.entry-title {
     font-size: 4rem;
     margin-left: 45%;
 } 
+@media (max-width: 480px) {
 
+  header {
+      height: 80px;
+      width: 450px;
+  }
+
+  .logo img {
+      width: 70%;
+      max-width: 100px;
+
+  }
+
+  header .container .titulo {
+   font-size: 1rem;
+  }
+
+
+  button {
+  margin-left: 100px;
+}
+
+}
 

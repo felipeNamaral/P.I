@@ -243,3 +243,31 @@ body{
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
+@media (max-width: 480px) {
+
+  header {
+      height: 80px;
+      width: 450px;
+  }
+
+  .logo img {
+      width: 70%;
+      max-width: 100px;
+
+  }
+  header .container {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+  }
+  header .container .titulo {
+   font-size: 1rem;
+  }
+
+
+  button {
+  margin-left: 100px;
+}
+
+}
