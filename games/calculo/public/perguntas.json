@@ -148,5 +148,208 @@
       "respostas": ["0", "1", "3", "2"],
       "respostasProcessadas": ["0", "1", "3", "2"],
       "respostaCorreta": 2
-  }
+  },
+  
+
+
+
+
+  {
+    "pergunta": "Qual é a derivada de \\( f(x) = \\ln(x^2) \\)?",
+    "respostas": ["\\(\\frac{1}{x}\\)", "\\(\\frac{2}{x}\\)", "\\(2\\ln(x)\\)", "\\(x\\ln(2)\\)"],
+    "respostasProcessadas": ["1/x", "2/x", "2ln(x)", "xln(2)"],
+    "respostaCorreta": 1
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = e^{2x} \\)?",
+    "respostas": ["\\(e^{2x}\\)", "\\(2e^{2x}\\)", "\\(e^x\\)", "\\(2e^x\\)"],
+    "respostasProcessadas": ["e^(2x)", "2e^(2x)", "e^x", "2e^x"],
+    "respostaCorreta": 1
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = \\sqrt{x} \\)?",
+    "respostas": ["\\(\\frac{1}{2\\sqrt{x}}\\)", "\\(\\frac{2}{\\sqrt{x}}\\)", "\\(\\sqrt{x}\\)", "\\(x\\)"],
+    "respostasProcessadas": ["1/(2sqrt(x))", "2/sqrt(x)", "sqrt(x)", "x"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = x\\ln(x) \\)?",
+    "respostas": ["\\(1 + \\ln(x)\\)", "\\(x\\)", "\\(\\ln(x)\\)", "\\(\\frac{1}{x}\\)"],
+    "respostasProcessadas": ["1 + ln(x)", "x", "ln(x)", "1/x"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = \\sin^2(x) \\)?",
+    "respostas": ["\\(\\sin(x)\\cos(x)\\)", "\\(2\\sin(x)\\cos(x)\\)", "\\(\\cos^2(x)\\)", "\\(-\\sin(x)\\cos(x)\\)"],
+    "respostasProcessadas": ["sin(x)cos(x)", "2sin(x)cos(x)", "cos²(x)", "-sin(x)cos(x)"],
+    "respostaCorreta": 1
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = \\cos^2(x) \\)?",
+    "respostas": ["\\(-2\\cos(x)\\sin(x)\\)", "\\(2\\cos(x)\\sin(x)\\)", "\\(\\sin^2(x)\\)", "\\(-\\cos^2(x)\\)"],
+    "respostasProcessadas": ["-2cos(x)sin(x)", "2cos(x)sin(x)", "sin²(x)", "-cos²(x)"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = \\tan^2(x) \\)?",
+    "respostas": ["\\(2\\sec^2(x)\\tan(x)\\)", "\\(\\sec^2(x)\\)", "\\(2\\tan(x)\\)", "\\(\\sec^2(x)\\tan(x)\\)"],
+    "respostasProcessadas": ["2sec²(x)tan(x)", "sec²(x)", "2tan(x)", "sec²(x)tan(x)"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = x^2e^x \\)?",
+    "respostas": ["\\(2xe^x + x^2e^x\\)", "\\(e^x + 2x^2e^x\\)", "\\(2xe^x\\)", "\\(x^2e^x\\)"],
+    "respostasProcessadas": ["2xe^x + x²e^x", "e^x + 2x²e^x", "2xe^x", "x²e^x"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = x^2\\ln(x) \\)?",
+    "respostas": ["\\(2x\\ln(x) + x\\)", "\\(x^2\\ln(x)\\)", "\\(2x\\ln(x)\\)", "\\(\\ln(x)\\)"],
+    "respostasProcessadas": ["2xln(x) + x", "x²ln(x)", "2xln(x)", "ln(x)"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a derivada de \\( f(x) = \\ln(\\sin(x)) \\)?",
+    "respostas": ["\\(\\cot(x)\\)", "\\(\\sec(x)\\)", "\\(\\frac{1}{\\sin(x)}\\)", "\\(\\frac{\\cos(x)}{\\sin(x)}\\)"],
+    "respostasProcessadas": ["cot(x)", "sec(x)", "1/sin(x)", "cos(x)/sin(x)"],
+    "respostaCorreta": 3
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int x^2 dx \\)?",
+    "respostas": ["\\(\\frac{x^3}{3} + C\\)", "\\(\\frac{2x^3}{3} + C\\)", "\\(x^3 + C\\)", "\\(\\frac{x^2}{2} + C\\)"],
+    "respostasProcessadas": ["x³/3 + C", "2x³/3 + C", "x³ + C", "x²/2 + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int e^x dx \\)?",
+    "respostas": ["\\(e^x + C\\)", "\\(xe^x + C\\)", "\\(\\ln(x) + C\\)", "\\(x + C\\)"],
+    "respostasProcessadas": ["e^x + C", "xe^x + C", "ln(x) + C", "x + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\sin(x) dx \\)?",
+    "respostas": ["\\(-\\cos(x) + C\\)", "\\(\\cos(x) + C\\)", "\\(\\tan(x) + C\\)", "\\(-\\sin(x) + C\\)"],
+    "respostasProcessadas": ["-cos(x) + C", "cos(x) + C", "tan(x) + C", "-sin(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\cos(x) dx \\)?",
+    "respostas": ["\\(\\sin(x) + C\\)", "\\(-\\sin(x) + C\\)", "\\(\\tan(x) + C\\)", "\\(-\\cos(x) + C\\)"],
+    "respostasProcessadas": ["sin(x) + C", "-sin(x) + C", "tan(x) + C", "-cos(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\sec^2(x) dx \\)?",
+    "respostas": ["\\(\\tan(x) + C\\)", "\\(-\\tan(x) + C\\)", "\\(\\sec(x) + C\\)", "\\(-\\sec(x) + C\\)"],
+    "respostasProcessadas": ["tan(x) + C", "-tan(x) + C", "sec(x) + C", "-sec(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\frac{1}{x} dx \\)?",
+    "respostas": ["\\(\\ln|x| + C\\)", "\\(\\ln(x) + C\\)", "\\(x + C\\)", "\\(x^2 + C\\)"],
+    "respostasProcessadas": ["ln|x| + C", "ln(x) + C", "x + C", "x² + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\tan(x) dx \\)?",
+    "respostas": ["\\(-\\ln|\\cos(x)| + C\\)", "\\(\\ln|\\sin(x)| + C\\)", "\\(\\sec(x) + C\\)", "\\(-\\sin(x) + C\\)"],
+    "respostasProcessadas": ["-ln|cos(x)| + C", "ln|sin(x)| + C", "sec(x) + C", "-sin(x) + C"],
+    "respostaCorreta": 0
+},
+
+
+
+{
+    "pergunta": "Qual é a integral de \\( \\int x^3 dx \\)?",
+    "respostas": ["\\(\\frac{x^4}{4} + C\\)", "\\(x^3 + C\\)", "\\(\\frac{x^3}{3} + C\\)", "\\(4x^3 + C\\)"],
+    "respostasProcessadas": ["x^4/4 + C", "x³ + C", "x³/3 + C", "4x³ + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int x\\cos(x) dx \\)?",
+    "respostas": ["\\(\\cos(x) + x\\sin(x) + C\\)", "\\(\\sin(x) - x\\cos(x) + C\\)", "\\(\\cos(x) - x\\sin(x) + C\\)", "\\(x\\cos(x) - \\sin(x) + C\\)"],
+    "respostasProcessadas": ["cos(x) + xsin(x) + C", "sin(x) - xcos(x) + C", "cos(x) - xsin(x) + C", "xcos(x) - sin(x) + C"],
+    "respostaCorreta": 1
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int e^{2x} dx \\)?",
+    "respostas": ["\\(\\frac{e^{2x}}{2} + C\\)", "\\(2e^{2x} + C\\)", "\\(\\ln|2x| + C\\)", "\\(e^x + C\\)"],
+    "respostasProcessadas": ["e^(2x)/2 + C", "2e^(2x) + C", "ln|2x| + C", "e^x + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\sin(2x) dx \\)?",
+    "respostas": ["\\(-\\frac{1}{2}\\cos(2x) + C\\)", "\\(\\frac{1}{2}\\cos(2x) + C\\)", "\\(-\\cos(2x) + C\\)", "\\(\\cos(2x) + C\\)"],
+    "respostasProcessadas": ["-1/2cos(2x) + C", "1/2cos(2x) + C", "-cos(2x) + C", "cos(2x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\ln(x) dx \\)?",
+    "respostas": ["\\(x\\ln(x) - x + C\\)", "\\(x\\ln(x) + C\\)", "\\(\\ln^2(x) + C\\)", "\\(\\frac{1}{x}\\ln(x) + C\\)"],
+    "respostasProcessadas": ["xln(x) - x + C", "xln(x) + C", "ln²(x) + C", "1/xln(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\sec(x)\\tan(x) dx \\)?",
+    "respostas": ["\\(\\sec(x) + C\\)", "\\(\\tan(x) + C\\)", "\\(\\sec^2(x) + C\\)", "\\(-\\sec(x) + C\\)"],
+    "respostasProcessadas": ["sec(x) + C", "tan(x) + C", "sec²(x) + C", "-sec(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\sec^2(x) dx \\)?",
+    "respostas": ["\\(\\tan(x) + C\\)", "\\(\\sec(x) + C\\)", "\\(-\\tan(x) + C\\)", "\\(\\cos(x) + C\\)"],
+    "respostasProcessadas": ["tan(x) + C", "sec(x) + C", "-tan(x) + C", "cos(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\frac{1}{1+x^2} dx \\)?",
+    "respostas": ["\\(\\arctan(x) + C\\)", "\\(\\ln|1+x^2| + C\\)", "\\(\\arcsin(x) + C\\)", "\\(\\arccos(x) + C\\)"],
+    "respostasProcessadas": ["arctan(x) + C", "ln|1+x²| + C", "arcsin(x) + C", "arccos(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\frac{1}{\\sqrt{1-x^2}} dx \\)?",
+    "respostas": ["\\(\\arcsin(x) + C\\)", "\\(\\arccos(x) + C\\)", "\\(\\ln|x| + C\\)", "\\(\\sqrt{1-x^2} + C\\)"],
+    "respostasProcessadas": ["arcsin(x) + C", "arccos(x) + C", "ln|x| + C", "sqrt(1-x²) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int x^2 e^x dx \\)?",
+    "respostas": ["\\(x^2 e^x - 2x e^x + 2e^x + C\\)", "\\(x^2 e^x + C\\)", "\\(x^2 e^x - x + C\\)", "\\(e^x - x^2 e^x + C\\)"],
+    "respostasProcessadas": ["x²e^x - 2xe^x + 2e^x + C", "x²e^x + C", "x²e^x - x + C", "e^x - x²e^x + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int e^{-x} dx \\)?",
+    "respostas": ["\\(-e^{-x} + C\\)", "\\(e^{-x} + C\\)", "\\(\\ln|x| + C\\)", "\\(-e^{x} + C\\)"],
+    "respostasProcessadas": ["-e^(-x) + C", "e^(-x) + C", "ln|x| + C", "-e^x + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int x\\sin(x) dx \\)?",
+    "respostas": ["\\(-x\\cos(x) + \\sin(x) + C\\)", "\\(x\\cos(x) + C\\)", "\\(x\\sin(x) + C\\)", "\\(-\\cos(x) + x\\sin(x) + C\\)"],
+    "respostasProcessadas": ["-xcos(x) + sin(x) + C", "xcos(x) + C", "xsin(x) + C", "-cos(x) + xsin(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\tan(x) dx \\)?",
+    "respostas": ["\\(-\\ln|\\cos(x)| + C\\)", "\\(\\ln|\\sin(x)| + C\\)", "\\(\\ln|\\tan(x)| + C\\)", "\\(-\\sec(x) + C\\)"],
+    "respostasProcessadas": ["-ln|cos(x)| + C", "ln|sin(x)| + C", "ln|tan(x)| + C", "-sec(x) + C"],
+    "respostaCorreta": 0
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int \\cot(x) dx \\)?",
+    "respostas": ["\\(\\ln|\\sin(x)| + C\\)", "\\(-\\ln|\\sin(x)| + C\\)", "\\(\\ln|\\cos(x)| + C\\)", "\\(-\\ln|\\cos(x)| + C\\)"],
+    "respostasProcessadas": ["ln|sin(x)| + C", "-ln|sin(x)| + C", "ln|cos(x)| + C", "-ln|cos(x)| + C"],
+    "respostaCorreta": 1
+},
+{
+    "pergunta": "Qual é a integral de \\( \\int x\\ln(x) dx \\)?",
+    "respostas": ["\\(\\frac{x^2}{2}\\ln(x) - \\frac{x^2}{4} + C\\)", "\\(\\frac{x^2}{2}\\ln(x) - \\frac{x^2}{2} + C\\)", "\\(x\\ln(x) - x + C\\)", "\\(x^2 \\ln(x) + C\\)"],
+    "respostasProcessadas": ["x²/2ln(x) - x²/4 + C", "x²/2ln(x) - x²/2 + C", "xln(x) - x + C", "x²ln(x) + C"],
+    "respostaCorreta": 0
+}
+
+
+  
 ]
