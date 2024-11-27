@@ -6,6 +6,13 @@
 
 ## Acesse o site:
 [BigBGames](https://bigbgames.com.br)
+## Acesso ao repositório:
+https://github.com/felipeNamaral/P.I
+## Integrantes:
+
+- [Felipe Amaral](https://github.com/felipeNamaral)
+- [Pedro Pimentel](https://github.com/PedroPimentelr)
+- [Jose Nucci](https://github.com/JoseVNucciR)
 
 ## Sobre o BigB Games
 
@@ -34,5 +41,15 @@ Contém as dependências e os scripts necessários para configurar e rodar o amb
 ### 3. **Pages**
 Contém os arquivos HTML das páginas de navegação do site:
 - **Página Principal**
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/46ce64db-3d75-44ad-abb0-14f7a93c4c47" alt="logo2" width="500px">
+</p>
+
 - **Sobre**
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/cf5e8fbb-c23d-4c7e-b2b5-6e2992e35e6c" alt="logo2" width="500px">
+</p>
 - **Contato**
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/cc44db3f-e294-433f-8cf3-934f6bca11e5" alt="logo2" width="500px">
+</p>
