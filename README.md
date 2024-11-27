@@ -34,6 +34,22 @@ O repositório está organizado em 3 pastas principais:
 
 ### 1. **Games**
 Contém todos os jogos do site, organizados em pastas individuais para cada um.
+#### Cálculo
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0f3734d0-0142-4635-9e46-22d0b1f75dcc" alt="logo2" width="500px">
+</p>
+ Aimlab
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/636f1819-33f9-4640-a173-f7976c90c3f1" alt="logo2" width="500px">
+</p>
+ Eeveelution
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e969e682-48bd-412b-90ca-5e1fbd2d1a20" alt="logo2" width="500px">
+</p>
+ Digitação
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7be414fc-858e-43dc-8200-6768362515e2" alt="logo2" width="500px">
+</p>
 
 ### 2. **node**
 Contém as dependências e os scripts necessários para configurar e rodar o ambiente de desenvolvimento do site. Você encontrará arquivos como `package.json`, que gerenciam as dependências e os pacotes utilizados no projeto.
